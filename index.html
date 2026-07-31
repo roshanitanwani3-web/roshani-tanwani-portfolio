@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roshani Tanwani | Digital Marketing & Growth Specialist</title>
+    <title>Roshani Tanwani | Performance Marketing & Digital Growth</title>
     
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -153,6 +153,7 @@
             border-radius: 16px;
             border: 2px solid var(--border-color);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            object-fit: cover;
         }
 
         /* SECTIONS */
@@ -326,29 +327,15 @@
         }
 
         .creative-info {
-            padding: 1rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
+            padding: 1.2rem;
+            font-size: 0.9rem;
+            color: var(--text-white);
         }
 
-        /* CLIENT LOGOS / TRUSTED BY */
-        .clients-strip {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            background: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .client-item {
-            font-size: 1.2rem;
-            font-weight: 700;
+        .creative-info p {
             color: var(--text-muted);
-            letter-spacing: 1px;
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
         }
 
         /* APPOINTMENT BOOKING FORM */
@@ -402,6 +389,11 @@
             align-items: center;
             gap: 0.5rem;
             font-size: 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .btn-wa:hover {
+            opacity: 0.9;
         }
 
         footer {
@@ -445,8 +437,8 @@
             </div>
         </div>
         <div class="hero-avatar-container">
-            <!-- Profile Photo -->
-            <img src="https://i.ibb.co/LdQ06kL/roshani-profile.jpg" alt="Roshani Tanwani - Digital Marketer" class="hero-avatar" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80'">
+            <!-- Profile Photo with Fallback -->
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Roshani Tanwani - Digital Marketer" class="hero-avatar">
         </div>
     </section>
 
@@ -546,25 +538,28 @@
         <div class="creatives-grid">
             <!-- Real Estate / Urban Living -->
             <div class="creative-card">
-                <img src="https://i.ibb.co/37X28qM/realestate-ad.jpg" alt="Real Estate Ad Campaign" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80'">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="Real Estate Ad Campaign">
                 <div class="creative-info">
-                    <strong>Urban Living Realty</strong> - Lead Generation Ad Poster
+                    <strong>Urban Living Realty</strong>
+                    <p>Lead Generation Ad Poster & Architectural Branding</p>
                 </div>
             </div>
 
             <!-- Food / Hospitality Banners -->
             <div class="creative-card">
-                <img src="https://i.ibb.co/3Y72v44/food-banner.jpg" alt="Cheffest Food Banner Design" onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80'">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Cheffest Food Banner Design">
                 <div class="creative-info">
-                    <strong>Cheffest Special Menu</strong> - High-Conversion Promotional Banner
+                    <strong>Cheffest Special Menu</strong>
+                    <p>High-Conversion Promotional Banner & Campaign</p>
                 </div>
             </div>
 
             <!-- Overseas Education Ad -->
             <div class="creative-card">
-                <img src="https://i.ibb.co/R2t9W7X/education-ad.jpg" alt="Education Visa Ad Poster" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80'">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Education Visa Ad Poster">
                 <div class="creative-info">
-                    <strong>Study In Australia</strong> - High-Intent Education Campaign
+                    <strong>Study In Australia</strong>
+                    <p>High-Intent Overseas Education Marketing Poster</p>
                 </div>
             </div>
         </div>
@@ -578,10 +573,10 @@
         </div>
 
         <div class="appointment-box">
-            <form id="whatsappForm">
+            <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
                 <div class="form-group">
                     <label for="name">Your Name / Business Name</label>
-                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <input type="text" id="name" placeholder="e.g. Roshani Tanwani" required>
                 </div>
 
                 <div class="form-group">
@@ -595,8 +590,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="date">Preferred Date & Time</label>
-                    <input type="datetime-local" id="date" required>
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" required>
                 </div>
 
                 <div class="form-group">
@@ -604,7 +599,7 @@
                     <textarea id="notes" rows="4" placeholder="Tell us about your target goals or current website..."></textarea>
                 </div>
 
-                <button type="button" class="btn-wa" onclick="sendToWhatsApp()">
+                <button type="submit" class="btn-wa">
                     <i class="fa-brands fa-whatsapp fa-xl"></i> Book via WhatsApp
                 </button>
             </form>
@@ -616,21 +611,18 @@
     </footer>
 
     <script>
-        function sendToWhatsApp() {
-            // Replace with Roshani's direct WhatsApp number (Country code + phone number without '+')
+        function sendToWhatsApp(e) {
+            e.preventDefault(); // Prevent standard page reload
+
+            // Target WhatsApp Number
             const phoneNumber = "919924743343"; 
 
             const name = document.getElementById('name').value;
             const service = document.getElementById('service').value;
             const date = document.getElementById('date').value;
-            const notes = document.getElementById('notes').value;
+            const notes = document.getElementById('notes').value || "No specific details provided.";
 
-            if(!name || !date) {
-                alert('Please fill in your name and preferred date.');
-                return;
-            }
-
-            const message = `Hello Roshani,%0A%0AI would like to book a Growth Consultation for *${service}*.%0A%0A*Client Name:* ${name}%0A*Preferred Schedule:* ${date}%0A*Project Brief:* ${notes}`;
+            const message = `Hello Roshani,%0A%0AI would like to book a Growth Consultation for *${service}*.%0A%0A*Client Name:* ${name}%0A*Preferred Date:* ${date}%0A*Notes:* ${notes}`;
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
             window.open(whatsappUrl, '_blank');
