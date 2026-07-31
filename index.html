@@ -246,8 +246,9 @@
 
         .case-img {
             width: 100%;
-            height: 320px;
-            object-fit: cover;
+            max-height: 400px;
+            object-fit: contain;
+            background: var(--bg-main);
             border-radius: 8px;
             margin-bottom: 1.2rem;
             border: 1px solid var(--border-color);
@@ -317,7 +318,7 @@
             gap: 0.5rem;
         }
 
-        /* CREATIVES & AD POSTERS GALLERY */
+        /* CREATIVES & AD POSTERS GALLERY (UPDATED SIZING) */
         .creatives-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -329,6 +330,9 @@
             border: 1px solid var(--border-color);
             border-radius: 12px;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
@@ -339,15 +343,20 @@
 
         .creative-card img {
             width: 100%;
-            height: 380px;
-            object-fit: cover;
+            height: auto;
+            max-height: 520px;
+            object-fit: contain;
+            background: #070A10;
             display: block;
+            padding: 10px;
         }
 
         .creative-info {
             padding: 1.2rem 1.5rem;
             font-size: 0.95rem;
             color: var(--text-white);
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
         }
 
         .creative-info p {
@@ -544,7 +553,7 @@
         </div>
     </section>
 
-    <!-- PERFORMANCE AD CREATIVES (UPDATED LINKS) -->
+    <!-- PERFORMANCE AD CREATIVES (FIXED SIZING & LINK) -->
     <section id="creatives">
         <div class="section-header">
             <p>Pinterest & Paid Ad Creatives</p>
@@ -579,12 +588,12 @@
                 </div>
             </div>
 
-            <!-- Strategic Campaign Asset -->
+            <!-- Strategic Campaign Asset with Fallback -->
             <div class="creative-card">
-                <img src="https://i.postimg.cc/QNcG0W12/Screenshot-242.png" alt="Strategic Marketing Creative Asset">
+                <img src="https://i.postimg.cc/QNcG0W12/Screenshot-242.png" alt="SEO & Ranking Strategy Creative" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'">
                 <div class="creative-info">
-                    <strong>Strategic Performance Banner</strong>
-                    <p>Analytical campaign creative designed for high-ticket client conversion.</p>
+                    <strong>SEO Mistakes & Growth Strategy</strong>
+                    <p>Analytical campaign creative designed for search engine performance & organic growth.</p>
                 </div>
             </div>
         </div>
