@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roshani Tanwani | High-Fashion Digital Strategy & Design</title>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS VARIABLES & THEMING */
+        :root {
+            --bg-primary: #FAF8F5;
+            --bg-card: #FFFFFF;
+            --accent-gold: #C5A059;
+            --text-dark: #1A1A1A;
+            --text-muted: #666666;
+            --border-color: #E8E2D9;
+            --whatsapp-green: #25D366;
+            --font-serif: 'Bodoni Moda', serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-dark);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAVIGATION BAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 248, 245, 0.92);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 10rem 8% 5rem 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        .hero-text h1 {
+            font-family: var(--font-serif);
+            font-size: 3.8rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-text h1 span {
+            font-style: italic;
+            color: var(--accent-gold);
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background-color: var(--text-dark);
+            color: #FFF;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-gold);
+        }
+
+        .hero-image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        /* SECTIONS GENERAL */
+        section {
+            padding: 6rem 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            font-weight: 400;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        /* BEFORE & AFTER SHOWCASE */
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            background: var(--bg-card);
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+
+        .case-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .badge-before { background: #FFE5E5; color: #D32F2F; }
+        .badge-after { background: #E8F5E9; color: #2E7D32; }
+
+        .stat-banner {
+            background: var(--bg-primary);
+            padding: 1rem;
+            margin-top: 1rem;
+            border-left: 3px solid var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* CREATIVE MASONRY GALLERY (PINTEREST STYLE) */
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 1.5rem;
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .masonry-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .masonry-item:hover img {
+            transform: scale(1.04);
+        }
+
+        /* PROTECTED PDF VIEWER */
+        .pdf-viewer-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .pdf-frame-wrapper {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        /* Overlay to block context menu and downloads */
+        .pdf-protection-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background: rgba(0,0,0,0);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* APPOINTMENT FORM & WHATSAPP INTEGRATION */
+        .appointment-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .btn-whatsapp {
+            width: 100%;
+            background-color: var(--whatsapp-green);
+            color: white;
+            border: none;
+            padding: 1.2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
+            transition: opacity 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            opacity: 0.9;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 3rem 8%;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .hero, .case-study-grid { grid-template-columns: 1fr; }
+            .masonry-grid { column-count: 1; }
+            .hero-text h1 { font-size: 2.8rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a href="#" class="logo">Roshani Tanwani</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#growth">Case Studies</a></li>
+            <li><a href="#portfolio">Creative Work</a></li>
+            <li><a href="#reports">Reports</a></li>
+            <li><a href="#book">Book Consultation</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="about">
+        <div class="hero-text">
+            <h1>Elevating Brands Through <span>Couture Strategy</span> & Vision.</h1>
+            <p>I help high-ticket fashion, beauty, and digital brands build high-converting web identities and scale their reach through tailored performance creative marketing.</p>
+            <a href="#book" class="cta-btn"><i class="fa-brands => fa-whatsapp"></i> Book Appointment</a>
+        </div>
+        <div class="hero-image-grid">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80" alt="Fashion Creative" class="hero-img">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="Editorial Fashion" class="hero-img">
+        </div>
+    </section>
+
+    <!-- BEFORE & AFTER GROWTH SECTION -->
+    <section id="growth">
+        <div class="section-title">
+            <p>Proven Performance</p>
+            <h2>Social Growth & Impact</h2>
+        </div>
+
+        <div class="case-study-grid">
+            <div class="case-card">
+                <span class="badge badge-before">Initial Stage (Before)</span>
+                <h3>Client Organic Reach Baseline</h3>
+                <p>Lower engagement metrics, limited reel distribution, and inconsistent post reach across beauty & fashion segments.</p>
+                <div class="stat-banner">
+                    Initial Views: ~300 - 1,300 views per campaign reel.
+                </div>
+            </div>
+
+            <div class="case-card">
+                <span class="badge badge-after">Optimized Strategy (After)</span>
+                <h3>Targeted Growth & Viral Expansion</h3>
+                <p>Implemented curated reel editing, high-ticket visual aesthetics, refined thumbnail hooks, and precise audience targeting.</p>
+                <div class="stat-banner">
+                    Scaled Performance: Boosted views up to 8,000+ per reel & significant reach growth!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PINTEREST-STYLE CREATIVE PORTFOLIO -->
+    <section id="portfolio">
+        <div class="section-title">
+            <p>Aesthetic Curation</p>
+            <h2>Fashion & Brand Portfolio</h2>
+        </div>
+
+        <div class="masonry-grid">
+            <!-- Featured Live Websites Built -->
+            <div class="masonry-item">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="E-Commerce Design">
+            </div>
+            <div class="masonry-item">
+                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=600&q=80" alt="Editorial Lookbook">
+            </div>
+            <div class="masonry-item">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80" alt="High Fashion Creative">
+            </div>
+            <div class="masonry-item">
+                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" alt="Couture Styling">
+            </div>
+            <div class="masonry-item">
+                <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80" alt="Luxury Branding">
+            </div>
+            <div class="masonry-item">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Creative Campaign">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECURE PDF REPORT VIEWER -->
+    <section id="reports">
+        <div class="section-title">
+            <p>Protected Strategic Documentation</p>
+            <h2>Client Case Study Report</h2>
+        </div>
+
+        <div class="pdf-viewer-container">
+            <!-- Download & Print Protection Overlay -->
+            <div class="pdf-protection-overlay" oncontextmenu="return false;"></div>
+            
+            <div class="pdf-frame-wrapper">
+                <!-- Replace 'your-report.pdf' with your PDF path or Google Drive Viewer URL -->
+                <iframe src="about:blank" id="pdfFrame" title="Strategy Report"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPOINTMENT BOOKING VIA WHATSAPP -->
+    <section id="book">
+        <div class="section-title">
+            <p>Direct Access</p>
+            <h2>Book an Appointment</h2>
+        </div>
+
+        <div class="appointment-wrapper">
+            <form id="whatsappForm">
+                <div class="form-group">
+                    <label for="name">Your Full Name</label>
+                    <input type="text" id="name" placeholder="e.g., Ayushi Sharma" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Required Service</label>
+                    <select id="service" required>
+                        <option value="Fashion Brand Strategy">Fashion Brand Strategy</option>
+                        <option value="Website Development & E-Commerce">Website Development & E-Commerce</option>
+                        <option value="Performance Social Marketing">Performance Social Marketing</option>
+                        <option value="Creative Visual Curation">Creative Visual Curation</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Preferred Date & Time</label>
+                    <input type="datetime-local" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Project Brief / Notes</label>
+                    <textarea id="notes" rows="4" placeholder="Tell us about your brand goals..."></textarea>
+                </div>
+
+                <button type="button" class="btn-whatsapp" onclick="sendToWhatsApp()">
+                    <i class="fa-brands fa-whatsapp fa-lg"></i> Book via WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Roshani Tanwani. Designed in Collaboration with MarkupGrowth. All Rights Reserved.</p>
+    </footer>
+
+    <!-- WHATSAPP INTEGRATION & PROTECTION SCRIPT -->
+    <script>
+        function sendToWhatsApp() {
+            // Configure Phone Number here (Country code without +)
+            const phoneNumber = "911234567890"; 
+
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            const notes = document.getElementById('notes').value;
+
+            if(!name || !date) {
+                alert('Please complete the required details before booking.');
+                return;
+            }
+
+            const message = `Hello Roshani,%0A%0AI would like to book an appointment for *${service}*.%0A%0A*Name:* ${name}%0A*Preferred Time:* ${date}%0A*Notes:* ${notes}`;
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Disable Right Click on Protected PDF Overlay to secure document download
+        document.querySelector('.pdf-protection-overlay').addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+</body>
+</html>
