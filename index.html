@@ -8,7 +8,7 @@
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -24,6 +24,7 @@
             --whatsapp-green: #25D366;
             --font-head: 'Plus Jakarta Sans', sans-serif;
             --font-body: 'Inter', sans-serif;
+            --font-editorial: 'Playfair Display', serif;
         }
 
         * {
@@ -234,12 +235,23 @@
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 2rem;
+            display: flex;
+            flex-direction: column;
         }
 
         .case-card h3 {
             font-family: var(--font-head);
             font-size: 1.4rem;
             margin-bottom: 0.8rem;
+        }
+
+        .case-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+            border: 1px solid var(--border-color);
         }
 
         .badge {
@@ -250,6 +262,7 @@
             font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 1rem;
+            align-self: flex-start;
         }
 
         .badge-viral { background: rgba(124, 58, 237, 0.2); color: #C084FC; border: 1px solid #7C3AED; }
@@ -259,7 +272,7 @@
             font-size: 1.8rem;
             font-weight: 800;
             color: var(--text-white);
-            margin: 1rem 0;
+            margin: 0.8rem 0;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -305,25 +318,94 @@
             gap: 0.5rem;
         }
 
-        /* CREATIVES GALLERY */
+        /* PINTEREST-INSPIRED CUSTOM AD CREATIVES */
         .creatives-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            gap: 1.8rem;
         }
 
-        .creative-card {
+        .pinterest-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
+            border-radius: 14px;
             overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .creative-card img {
+        .pinterest-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-cyan);
+        }
+
+        .pinterest-banner {
             width: 100%;
-            height: 320px;
-            object-fit: cover;
-            display: block;
+            height: 380px;
+            padding: 2.2rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .banner-1 {
+            background: linear-gradient(145deg, #180E29 0%, #0D1B2A 100%);
+            border-bottom: 2px solid var(--accent-purple);
+        }
+
+        .banner-2 {
+            background: linear-gradient(145deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+            border-bottom: 2px solid var(--accent-cyan);
+        }
+
+        .banner-3 {
+            background: linear-gradient(145deg, #2B1055 0%, #7597DE 100%);
+            border-bottom: 2px solid #F43F5E;
+        }
+
+        .banner-tag {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #A7F3D0;
+            background: rgba(255,255,255,0.08);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            width: fit-content;
+            backdrop-filter: blur(5px);
+        }
+
+        .banner-title {
+            font-family: var(--font-editorial);
+            font-size: 1.8rem;
+            line-height: 1.25;
+            color: #FFFFFF;
+            margin: 1rem 0;
+        }
+
+        .banner-metric {
+            font-family: var(--font-head);
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #38BDF8, #A855F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .banner-footer-btn {
+            background: rgba(255,255,255,0.15);
+            color: #FFF;
+            text-align: center;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .creative-info {
@@ -437,14 +519,8 @@
             </div>
         </div>
         <div class="hero-avatar-container">
-            <!-- Roshani's Photo SVG Embed -->
-            <svg class="hero-avatar" viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg">
-                <rect width="300" height="380" fill="#1A2333"/>
-                <circle cx="150" cy="130" r="65" fill="#3B82F6" opacity="0.3"/>
-                <path d="M150 60 C120 60 100 85 100 125 C100 170 120 185 150 185 C180 185 200 170 200 125 C200 85 180 60 150 60 Z" fill="#D1D5DB"/>
-                <path d="M70 330 C70 240 100 210 150 210 C200 210 230 240 230 330 Z" fill="#1E293B"/>
-                <text x="150" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="14" fill="#06B6D4" text-anchor="middle">ROSHANI TANWANI</text>
-            </svg>
+            <!-- Roshani's Photo File Name Updated -->
+            <img src="./roshani.jpg.jpg" alt="Roshani Tanwani - Digital Marketer" class="hero-avatar">
         </div>
     </section>
 
@@ -488,26 +564,26 @@
         </div>
 
         <div class="case-studies-grid">
-            <!-- Highlight 1: 1.2M Reach -->
+            <!-- Highlight 1: 1.2M Reach with Updated File Name -->
             <div class="case-card">
+                <img src="./mv-1.2m.jpg.jpeg" alt="1.2M Views Instagram Reel" class="case-img">
                 <span class="badge badge-viral">1.2M+ Views Scaled</span>
                 <h3>MV Fashion Jewellery & Art</h3>
                 <p>Transformed raw organic content into a high-converting viral strategy. Re-engineered campaign hooks and targeting to break organic thresholds.</p>
                 <div class="stat-highlight">
                     <i class="fa-solid fa-fire-flame-curved" style="color: #7C3AED;"></i> 1.2 Million Views
                 </div>
-                <p style="color: var(--text-muted); font-size: 0.85rem;">Scaled from initial low engagement (~600 views baseline) to over 1.2M views on key showcase reels, driving massive direct inquiries.</p>
             </div>
 
             <!-- Highlight 2: Before & After Growth -->
             <div class="case-card">
+                <img src="./geet-growth.jpg" alt="Geet Beauty Care Organic Growth" class="case-img">
                 <span class="badge badge-growth">Organic Reach Overhaul</span>
                 <h3>Geet Beauty Care & Bridal</h3>
                 <p>Full content overhaul, thumbnail optimization, and targeted promotional strategy for bridal and masterclass offerings.</p>
                 <div class="stat-highlight">
                     <i class="fa-solid fa-chart-line" style="color: #06B6D4;"></i> ~600 &rarr; 8,000+ Views
                 </div>
-                <p style="color: var(--text-muted); font-size: 0.85rem;">Before: Stagnant reach between 300 to 1,300 views. After: Consistent multi-thousand reach spikes up to 8,000+ views per post.</p>
             </div>
         </div>
     </section>
@@ -534,63 +610,71 @@
         </div>
     </section>
 
-    <!-- CREATIVES & AD POSTERS GALLERY -->
+    <!-- PINTEREST-STYLE DIGITAL MARKETING CREATIVES -->
     <section id="creatives">
         <div class="section-header">
-            <p>Pinterest & Ad Campaign Creatives</p>
-            <h2>Performance Ad Banners & Creatives</h2>
+            <p>Pinterest Aesthetic Strategy</p>
+            <h2>Performance Marketing Ad Creatives</h2>
         </div>
 
         <div class="creatives-grid">
-            <!-- Real Estate / Urban Living -->
-            <div class="creative-card">
-                <svg width="100%" height="320" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="500" fill="#064E3B"/>
-                    <rect x="20" y="20" width="360" height="240" rx="8" fill="#10B981" opacity="0.3"/>
-                    <text x="200" y="300" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="#A7F3D0" text-anchor="middle">URBAN LIVING</text>
-                    <text x="200" y="335" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#FFFFFF" text-anchor="middle">FIND A PERFECT HOME</text>
-                    <text x="200" y="380" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="24" fill="#34D399" text-anchor="middle">₹23,00,000 Onwards</text>
-                    <rect x="100" y="410" width="200" height="40" rx="6" fill="#10B981"/>
-                    <text x="200" y="435" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#FFFFFF" text-anchor="middle">BOOK NOW</text>
-                </svg>
+            <!-- Creative Banner 1 -->
+            <div class="pinterest-card">
+                <div class="pinterest-banner banner-1">
+                    <span class="banner-tag">Performance Funnel</span>
+                    <div>
+                        <p style="color: #C084FC; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Paid Media Campaign</p>
+                        <h3 class="banner-title">Scalable Lead Generation Architecture</h3>
+                    </div>
+                    <div>
+                        <div class="banner-metric">+340%</div>
+                        <p style="color: var(--text-muted); font-size: 0.75rem;">Qualified High-Ticket Inquiries</p>
+                    </div>
+                    <div class="banner-footer-btn">View Campaign Brief</div>
+                </div>
                 <div class="creative-info">
-                    <strong>Urban Living Realty</strong>
-                    <p>Lead Generation Ad Poster & Architectural Branding</p>
+                    <strong>High-Ticket Acquisition Creative</strong>
+                    <p>Editorial Pinterest-style paid ad layout designed for corporate service conversion.</p>
                 </div>
             </div>
 
-            <!-- Food / Hospitality Banners -->
-            <div class="creative-card">
-                <svg width="100%" height="320" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="500" height="300" fill="#78350F"/>
-                    <text x="250" y="100" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="36" fill="#FBBF24" text-anchor="middle">CHEFFEST</text>
-                    <text x="250" y="150" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="26" fill="#FFFFFF" text-anchor="middle">Fast Food Special Menu</text>
-                    <text x="250" y="190" font-family="'Inter', sans-serif" font-size="14" fill="#FDE68A" text-anchor="middle">Crispy Fries • Cheesy Burgers • Spicy Wraps</text>
-                    <rect x="150" y="220" width="200" height="40" rx="20" fill="#F59E0B"/>
-                    <text x="250" y="245" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#FFFFFF" text-anchor="middle">www.cheffest.com</text>
-                </svg>
+            <!-- Creative Banner 2 -->
+            <div class="pinterest-card">
+                <div class="pinterest-banner banner-2">
+                    <span class="banner-tag">Viral Content Hook</span>
+                    <div>
+                        <p style="color: #67E8F9; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Social Growth</p>
+                        <h3 class="banner-title">The 1.2M Reel Reach Engine</h3>
+                    </div>
+                    <div>
+                        <div class="banner-metric">1.2M+</div>
+                        <p style="color: var(--text-muted); font-size: 0.75rem;">Organic Impression Peak</p>
+                    </div>
+                    <div class="banner-footer-btn">Analyze Hook Strategy</div>
+                </div>
                 <div class="creative-info">
-                    <strong>Cheffest Special Menu</strong>
-                    <p>High-Conversion Promotional Banner & Campaign</p>
+                    <strong>Short-Form Video Engine</strong>
+                    <p>Viral hook structure engineered to beat social algorithm suppression.</p>
                 </div>
             </div>
 
-            <!-- Overseas Education Ad -->
-            <div class="creative-card">
-                <svg width="100%" height="320" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="500" fill="#1E3A8A"/>
-                    <text x="200" y="80" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="#EF4444" text-anchor="middle">STUDY IN AUSTRALIA</text>
-                    <text x="200" y="120" font-family="'Inter', sans-serif" font-weight="600" font-size="16" fill="#93C5FD" text-anchor="middle">Melbourne | Sydney | Adelaide</text>
-                    <rect x="40" y="160" width="320" height="200" rx="8" fill="#1D4ED8" opacity="0.4"/>
-                    <text x="200" y="220" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle">★ Highest Scholarship Option</text>
-                    <text x="200" y="260" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle">★ 3 Yrs Post Study Work Visa</text>
-                    <text x="200" y="300" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle">★ NO VISA FEES</text>
-                    <circle cx="320" cy="420" r="45" fill="#DC2626"/>
-                    <text x="320" y="425" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14" fill="#FFFFFF" text-anchor="middle">APPLY NOW</text>
-                </svg>
+            <!-- Creative Banner 3 -->
+            <div class="pinterest-card">
+                <div class="pinterest-banner banner-3">
+                    <span class="banner-tag">E-Commerce Scaling</span>
+                    <div>
+                        <p style="color: #FDA4AF; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Brand Positioning</p>
+                        <h3 class="banner-title">Modern E-Com UX & Ad Alignment</h3>
+                    </div>
+                    <div>
+                        <div class="banner-metric">4.8x</div>
+                        <p style="color: var(--text-muted); font-size: 0.75rem;">ROAS Campaign Benchmark</p>
+                    </div>
+                    <div class="banner-footer-btn">Explore Visual Strategy</div>
+                </div>
                 <div class="creative-info">
-                    <strong>Study In Australia</strong>
-                    <p>High-Intent Overseas Education Marketing Poster</p>
+                    <strong>Aesthetic Performance Creatives</strong>
+                    <p>Pinterest-curated design balancing brand luxury with performance conversion.</p>
                 </div>
             </div>
         </div>
@@ -645,7 +729,7 @@
         function sendToWhatsApp(e) {
             e.preventDefault();
 
-            // Roshani Tanwani's Direct Phone Number
+            // Direct WhatsApp Number
             const phoneNumber = "919251012848"; 
 
             const name = document.getElementById('name').value;
