@@ -8,7 +8,7 @@
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -24,7 +24,6 @@
             --whatsapp-green: #25D366;
             --font-head: 'Plus Jakarta Sans', sans-serif;
             --font-body: 'Inter', sans-serif;
-            --font-editorial: 'Playfair Display', serif;
         }
 
         * {
@@ -318,106 +317,43 @@
             gap: 0.5rem;
         }
 
-        /* PINTEREST-STYLE DIGITAL MARKETING CREATIVES */
+        /* CREATIVES & AD POSTERS GALLERY */
         .creatives-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.8rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
         }
 
-        .pinterest-card {
+        .creative-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
+            border-radius: 12px;
             overflow: hidden;
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .pinterest-card:hover {
-            transform: translateY(-6px);
+        .creative-card:hover {
+            transform: translateY(-5px);
             border-color: var(--accent-cyan);
         }
 
-        .pinterest-banner {
+        .creative-card img {
             width: 100%;
             height: 380px;
-            padding: 2.2rem 1.8rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            box-sizing: border-box;
-        }
-
-        .banner-1 {
-            background: linear-gradient(145deg, #180E29 0%, #0D1B2A 100%);
-            border-bottom: 2px solid var(--accent-purple);
-        }
-
-        .banner-2 {
-            background: linear-gradient(145deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
-            border-bottom: 2px solid var(--accent-cyan);
-        }
-
-        .banner-3 {
-            background: linear-gradient(145deg, #2B1055 0%, #7597DE 100%);
-            border-bottom: 2px solid #F43F5E;
-        }
-
-        .banner-tag {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 800;
-            color: #A7F3D0;
-            background: rgba(255,255,255,0.08);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            width: fit-content;
-            backdrop-filter: blur(5px);
-        }
-
-        .banner-title {
-            font-family: var(--font-editorial);
-            font-size: 1.8rem;
-            line-height: 1.25;
-            color: #FFFFFF;
-            margin: 1rem 0;
-        }
-
-        .banner-metric {
-            font-family: var(--font-head);
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, #38BDF8, #A855F7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .banner-footer-btn {
-            background: rgba(255,255,255,0.15);
-            color: #FFF;
-            text-align: center;
-            padding: 0.75rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.2);
+            object-fit: cover;
+            display: block;
         }
 
         .creative-info {
-            padding: 1.2rem;
-            font-size: 0.9rem;
+            padding: 1.2rem 1.5rem;
+            font-size: 0.95rem;
             color: var(--text-white);
         }
 
         .creative-info p {
             color: var(--text-muted);
-            font-size: 0.8rem;
-            margin-top: 0.2rem;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
         }
 
         /* APPOINTMENT BOOKING FORM */
@@ -487,8 +423,7 @@
         }
 
         @media (max-width: 900px) {
-            .hero, .about-card, .case-studies-grid, .websites-grid { grid-template-columns: 1fr; }
-            .creatives-grid { grid-template-columns: 1fr; }
+            .hero, .about-card, .case-studies-grid, .websites-grid, .creatives-grid { grid-template-columns: 1fr; }
             .hero-text h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
         }
@@ -519,7 +454,6 @@
             </div>
         </div>
         <div class="hero-avatar-container">
-            <!-- Profile Photo updated to Postimages link -->
             <img src="https://i.postimg.cc/8kxQbm7G/roshani-jpg.png" alt="Roshani Tanwani - Digital Marketer" class="hero-avatar">
         </div>
     </section>
@@ -610,71 +544,47 @@
         </div>
     </section>
 
-    <!-- PINTEREST-STYLE DIGITAL MARKETING CREATIVES -->
+    <!-- PERFORMANCE AD CREATIVES (UPDATED LINKS) -->
     <section id="creatives">
         <div class="section-header">
-            <p></p>
-            <h2>Performance Marketing Ad Creatives</h2>
+            <p>Pinterest & Paid Ad Creatives</p>
+            <h2>Performance Banners & Campaign Creatives</h2>
         </div>
 
         <div class="creatives-grid">
-            <!-- Creative Banner 1 -->
-            <div class="pinterest-card">
-                <div class="pinterest-banner banner-1">
-                    <span class="banner-tag">Performance Funnel</span>
-                    <div>
-                        <p style="color: #C084FC; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Paid Media Campaign</p>
-                        <h3 class="banner-title">Scalable Lead Generation Architecture</h3>
-                    </div>
-                    <div>
-                        <div class="banner-metric">+340%</div>
-                        <p style="color: var(--text-muted); font-size: 0.75rem;">Qualified High-Ticket Inquiries</p>
-                    </div>
-                    <div class="banner-footer-btn">View Campaign Brief</div>
-                </div>
+            <!-- Textile Manufacturers Campaign -->
+            <div class="creative-card">
+                <img src="https://i.postimg.cc/2ygDb4Zc/Digital-Marketing-for-Textile-Manufacturers-in-Rajasthan.jpg" alt="Digital Marketing for Textile Manufacturers">
                 <div class="creative-info">
-                    <strong>High-Ticket Acquisition Creative</strong>
-                    <p>Editorial Pinterest-style paid ad layout designed for corporate service conversion.</p>
+                    <strong>Textile Industry Growth Guide</strong>
+                    <p>B2B lead generation poster for textile manufacturers in Rajasthan.</p>
                 </div>
             </div>
 
-            <!-- Creative Banner 2 -->
-            <div class="pinterest-card">
-                <div class="pinterest-banner banner-2">
-                    <span class="banner-tag">Viral Content Hook</span>
-                    <div>
-                        <p style="color: #67E8F9; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Social Growth</p>
-                        <h3 class="banner-title">The 1.2M Reel Reach Engine</h3>
-                    </div>
-                    <div>
-                        <div class="banner-metric">1.2M+</div>
-                        <p style="color: var(--text-muted); font-size: 0.75rem;">Organic Impression Peak</p>
-                    </div>
-                    <div class="banner-footer-btn">Analyze Hook Strategy</div>
-                </div>
+            <!-- Facebook Ad Copy Campaign -->
+            <div class="creative-card">
+                <img src="https://i.postimg.cc/5tPN9Qnm/add-copy-new-fb.png" alt="Facebook Paid Ad Copy Creative">
                 <div class="creative-info">
-                    <strong>Short-Form Video Engine</strong>
-                    <p>Viral hook structure engineered to beat social algorithm suppression.</p>
+                    <strong>High-Converting Meta Ad Copy</strong>
+                    <p>High-click-through creative designed for paid Facebook/Instagram ads.</p>
                 </div>
             </div>
 
-            <!-- Creative Banner 3 -->
-            <div class="pinterest-card">
-                <div class="pinterest-banner banner-3">
-                    <span class="banner-tag">E-Commerce Scaling</span>
-                    <div>
-                        <p style="color: #FDA4AF; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Brand Positioning</p>
-                        <h3 class="banner-title">Modern E-Com UX & Ad Alignment</h3>
-                    </div>
-                    <div>
-                        <div class="banner-metric">4.8x</div>
-                        <p style="color: var(--text-muted); font-size: 0.75rem;">ROAS Campaign Benchmark</p>
-                    </div>
-                    <div class="banner-footer-btn">Explore Visual Strategy</div>
-                </div>
+            <!-- Overseas Education Campaign -->
+            <div class="creative-card">
+                <img src="https://i.postimg.cc/3x8TyJy1/Study-in-astralia-AD-COPY-1.jpg" alt="Study in Australia Ad Copy">
                 <div class="creative-info">
-                    <strong>Aesthetic Performance Creatives</strong>
-                    <p>Pinterest-curated design balancing brand luxury with performance conversion.</p>
+                    <strong>Study In Australia Campaign</strong>
+                    <p>High-intent lead acquisition poster for overseas education visas.</p>
+                </div>
+            </div>
+
+            <!-- Strategic Campaign Asset -->
+            <div class="creative-card">
+                <img src="https://i.postimg.cc/QNcG0W12/Screenshot-242.png" alt="Strategic Marketing Creative Asset">
+                <div class="creative-info">
+                    <strong>Strategic Performance Banner</strong>
+                    <p>Analytical campaign creative designed for high-ticket client conversion.</p>
                 </div>
             </div>
         </div>
